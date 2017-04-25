@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
 
 import dao.DAO;
@@ -15,10 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author arthu
- */
 @WebServlet(name = "Teste", urlPatterns = {"/Teste"})
 public class Teste extends HttpServlet {
 
@@ -36,42 +27,35 @@ public class Teste extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         Marca marca = new Marca();
-        
-        /*
-        DAO dao = new DAO<Marca>();
-        marca.setNome("FIAT");
-        dao.inserir_atualizar(marca);
-        marca.setNome("Peugeot");
-        dao.inserir_atualizar(marca);
-        marca.setNome("Ford");
-        dao.inserir_atualizar(marca);
-        */
-        
-        
         DAO dao = new DAO<Veiculo>();
         
         Veiculo veiculo = new Veiculo();
         veiculo.setAno(1965);
-        marca.setNome("FIAT");
+        marca.setNome("Fiat");
         veiculo.setMarca(marca);
         veiculo.setPlaca("kkk-kk8");
         veiculo.setNome("PALIO");
         dao.inserir_atualizar(veiculo);
         
-        marca.setNome("Peugeot");
         veiculo.setAno(1980);
         marca.setNome("Peugeot");
         veiculo.setMarca(marca);
-        veiculo.setPlaca("yyy-AAA");
+        veiculo.setPlaca("YYY-AAA");
         veiculo.setNome("307");
         dao.inserir_atualizar(veiculo);
                 
-        marca.setNome("Ford");
         veiculo.setAno(1999);
         marca.setNome("Ford");
         veiculo.setMarca(marca);
         veiculo.setPlaca("yyy-bbb");
         veiculo.setNome("Focus");
+        dao.inserir_atualizar(veiculo);
+        
+        veiculo.setAno(2010);
+        marca.setNome("Hyundai");
+        veiculo.setMarca(marca);
+        veiculo.setPlaca("www-bbb");
+        veiculo.setNome("HB20");
         dao.inserir_atualizar(veiculo);
     }
 
